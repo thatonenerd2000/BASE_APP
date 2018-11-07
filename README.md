@@ -1,10 +1,7 @@
 # BASE_APP
-An App for BASE
+An App for BASE :)
 
-To runn it 
+Make sure you have either Android Studio or xcode with require Emulators. For android make sure your android version supports at lease 6.0.0 Marshmallow  
 
-run from your terminal: 
-
-1) `react-native start`
-2) `react-native run-ios` or `react-native run-android`
-  .) Tp specify device `react-native run-ios --simulator="iPhone 4s"`
+1) Open Terminal and `cd` into the project foleder and type `react-native start`
+2) Keep the tab running open another tab ( another command prompt for windows ) and type either `react-native run-ios` or `react-native run-android`. To specify device `react-native run-ios --simulator="iPhone 8s"`
