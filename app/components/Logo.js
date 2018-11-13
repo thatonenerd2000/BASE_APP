@@ -82,7 +82,7 @@ export default class Logo extends Component {
 
     return (
       <View>
-        <FadeAnimation>
+        <FadeAnimation delay={500}>
           <Animated.View
             style={{
               height: logPosition.height,
@@ -108,7 +108,7 @@ export default class Logo extends Component {
             />
           </Animated.View>
         </FadeAnimation>
-        <FadeAnimation>
+        <FadeAnimation delay={500}>
           <View>
             <Animated.Text
               style={{
