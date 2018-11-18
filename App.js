@@ -1,35 +1,37 @@
 import React, { Component } from "react";
 import { AppRegistry, Text, View, StyleSheet } from "react-native";
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+import Icon from "react-native-vector-icons";
 
-import Logo from "./app/components/Logo.js";
+import Home from "./app/components/home.js";
 import BackgroundImage from "./app/components/BackgroundImage.js";
-import Menu from "./app/components/menu.js";
 
-export default class Base extends Component {
+class HomeScreen extends Component {
   render() {
     return (
       <BackgroundImage>
-        <Logo />
-        <View style={styles.menuContainer}>
-          <Menu itemImage={require("./media/menu/announcements.png")} />
-          <Menu itemImage={require("./media/menu/calendar.png")} />
-          <Menu itemImage={require("./media/menu/staff.png")} />
-          <Menu itemImage={require("./media/menu/contact.png")} />
-          <Menu itemImage={require("./media/menu/student.png")} />
-          <Menu itemImage={require("./media/menu/about.png")} />
-        </View>
+        <Home />
       </BackgroundImage>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  menuContainer: {
-    top: -150,
-    height: "40%",
-    flexDirection: "row",
-    flexWrap: "wrap"
+export default createMaterialBottomTabNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        tabBarLabel: "Home",
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name="ios-home" color={tintColor} size={24} />
+        )
+      }
+    }
+  },
+  {
+    initialRouteName: "Home",
+    activeTintColor: "#65b3a9"
   }
-});
+);
 
-AppRegistry.registerComponent("Base", () => Base);
+AppRegistry.registerComponent("HomeScreen", () => HomeScreen);
