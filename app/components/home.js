@@ -10,6 +10,7 @@ export default class Home extends Component {
     const vWidth = Dimensions.get("window").width;
     return (
       <View>
+        {this.props.children}
         <Logo />
         <FadeAnimation delay={3300}>
           <View
@@ -48,6 +49,16 @@ export default class Home extends Component {
           >
             “Only those who will risk going too far can possibly find out how
             far one can go.”
+          </Text>
+          <Text
+            style={{
+              textAlign: "right",
+              fontFamily: "Courier-Bold",
+              margin: 20,
+              top: vHeight / -8
+            }}
+          >
+            -TS Eliot
           </Text>
         </FadeAnimation>
       </View>
