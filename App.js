@@ -1,15 +1,18 @@
 import React, { Component } from "react";
-import { AppRegistry, Text, View, StyleSheet } from "react-native";
+import { AppRegistry, Text, View, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
-
 import Home from "./app/components/home.js";
+import Announcements from "./app/components/announcements.js";
+import Contact from "./app/components/contact.js";
+
 import BackgroundImage from "./app/components/BackgroundImage.js";
 
 class HomeScreen extends Component {
   render() {
     return (
       <BackgroundImage>
+        <StatusBar hidden={true} />
         <Home />
       </BackgroundImage>
     );
@@ -19,11 +22,9 @@ class HomeScreen extends Component {
 class AnnouncementScreen extends Component {
   render() {
     return (
-      <View>
-        <Text style={{ textAlign: "center", top: 200 }}>
-          This is going to be the Announcement Screen
-        </Text>
-      </View>
+      <Announcements>
+        <StatusBar hidden={true} />
+      </Announcements>
     );
   }
 }
@@ -42,13 +43,13 @@ class MaterialScreen extends Component {
 
 class ContactScreen extends Component {
   render() {
-    return (
-      <View>
-        <Text style={{ textAlign: "center", top: 200 }}>
-          This is going to be the Contact Screen
-        </Text>
-      </View>
-    );
+    return <Contact />;
+  }
+}
+
+class AdminPage extends Component {
+  render() {
+    return <Text>Hi</Text>;
   }
 }
 
@@ -59,7 +60,7 @@ export default createMaterialBottomTabNavigator(
       navigationOptions: {
         title: "Home",
         tabBarLabel: <Text style={{ color: "white" }}>Home</Text>,
-        barStyle: { backgroundColor: "#B71C1C" },
+        barStyle: { backgroundColor: "#281b39" },
         tabBarIcon: <Icon size={24} name="home" style={{ color: "white" }} />
       }
     },
@@ -68,7 +69,7 @@ export default createMaterialBottomTabNavigator(
       navigationOptions: {
         title: "Announcement",
         tabBarLabel: <Text style={{ color: "white" }}>Announcements</Text>,
-        barStyle: { backgroundColor: "#388E3C" },
+        barStyle: { backgroundColor: "#0e141d" },
         tabBarIcon: (
           <Icon size={24} name="bullhorn" style={{ color: "white" }} />
         )
@@ -90,17 +91,23 @@ export default createMaterialBottomTabNavigator(
       navigationOptions: {
         title: "Contact",
         tabBarLabel: <Text style={{ color: "white" }}>Contact</Text>,
-        barStyle: { backgroundColor: "#a0c4ff" },
+        barStyle: { backgroundColor: "#524365" },
         tabBarIcon: (
           <Icon size={24} name="comments" style={{ color: "white" }} />
         )
       }
+    },
+    Admin: {
+      screen: AdminPage,
+      navigationOptions: {
+        gesturesEnabled: false,
+        tabBarVisible: false
+      }
     }
   },
+
   {
     shifting: true,
     labeled: true
   }
 );
-
-AppRegistry.registerComponent("HomeScreen", () => HomeScreen);
