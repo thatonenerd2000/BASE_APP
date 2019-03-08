@@ -133,7 +133,8 @@ export default class Announcements extends Component {
                 color: "grey"
               }}
             >
-              {this.getTimeSincePost(sub.CompareDate)}
+              {this.getTimeSincePost(sub.CompareDate)} by{" "}
+              <Text style={{ fontWeight: "bold" }}>{sub.Author}</Text>
             </Text>
           </View>
         </TouchableOpacity>

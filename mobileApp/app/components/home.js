@@ -17,7 +17,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     var config = {
-      apiKey: "AIzaSyCioQddo0zp-n1IkRq8Dc5izZ4vnz6T9HE",
+      apiKey: "AIzaSyB4RxlDdBEhaAIzG13Gln2IAsd27DUCXtE",
       authDomain: "baseapp-3afb3.firebaseapp.com",
       databaseURL: "https://baseapp-3afb3.firebaseio.com",
       projectId: "baseapp-3afb3",
