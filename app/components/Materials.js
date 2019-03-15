@@ -6,47 +6,26 @@ import {
   TouchableOpacity,
   ScrollView
 } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
-import LinearGradient from "react-native-linear-gradient";
-import call from "react-native-phone-call";
-import email from "react-native-email";
-import openMap from "react-native-open-maps";
 
-export default class Contact extends Component {
-  call = () => {
-    const args = {
-      number: "7187336024",
-      prompt: true
-    };
-    call(args).catch(console.error);
-  };
+import Icon from "react-native-vector-icons/FontAwesome5";
 
-  handleEmail = () => {
-    const to = ["support@bronxsoftware.org"]; // string or array of email addresses
-    email(to, {
-      // Optional additional arguments
-      // bcc: "ben@bronxsoftware.org",
-      subject: "Information/Feedback",
-      body: "Enter message here"
-    }).catch(console.error);
-  };
-
-  direction = () => {
-    openMap({ latitude: 40.855217, longitude: -73.8847955 });
-  };
-
+export default class Materials extends Component {
   render() {
     const vHeight = Dimensions.get("window").height;
     const vWidth = Dimensions.get("window").width;
     return (
-      <ScrollView>
-        <TouchableOpacity onPress={this.call}>
-          <LinearGradient
-            colors={["#6FBEFF", "#0180FF"]}
+      <ScrollView style={{ backgroundColor: "#226764" }}>
+        <TouchableOpacity>
+          <View
             style={{
-              height: vHeight / 3,
-              backgroundColor: "#4C99CF",
-              flexDirection: "row"
+              height: vHeight / 5,
+              width: "90%",
+              margin: 10,
+              marginTop: 50,
+              marginLeft: 20,
+              borderRadius: 20,
+              flexDirection: "row",
+              backgroundColor: "#729A98"
             }}
           >
             <View
@@ -59,121 +38,7 @@ export default class Contact extends Component {
             >
               <Icon
                 size={vHeight / 10}
-                name="phone"
-                style={{ color: "white" }}
-              />
-            </View>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "column",
-                justifyContent: "center",
-                marginRight: vWidth / 5,
-                textAlign: "center",
-                marginBottom: 10
-              }}
-            >
-              <Text
-                style={{
-                  fontFamily: "GillSans-Bold",
-                  color: "white",
-                  fontSize: vHeight / 25,
-                  paddingBottom: 10,
-                  textAlign: "center"
-                }}
-              >
-                Phone
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "Gill Sans",
-                  color: "white",
-                  fontSize: vHeight / 50,
-                  textAlign: "center",
-                  paddingTop: 10
-                }}
-              >
-                Contact our main office.
-              </Text>
-            </View>
-          </LinearGradient>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.handleEmail}>
-          <LinearGradient
-            colors={["#457CB7", "#2a4c70"]}
-            style={{
-              height: vHeight / 3,
-              backgroundColor: "#4976AB",
-              flexDirection: "row"
-            }}
-          >
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "column",
-                justifyContent: "center",
-                paddingLeft: vWidth / 10
-              }}
-            >
-              <Icon size={vHeight / 10} name="at" style={{ color: "white" }} />
-            </View>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "column",
-                justifyContent: "center",
-                marginRight: vWidth / 5,
-                textAlign: "center",
-                marginBottom: 10
-              }}
-            >
-              <Text
-                style={{
-                  fontFamily: "GillSans-Bold",
-                  color: "white",
-                  fontSize: vHeight / 25,
-                  paddingBottom: 10,
-                  marginLeft: 5,
-                  textAlign: "center"
-                }}
-              >
-                Email
-              </Text>
-
-              <Text
-                style={{
-                  fontFamily: "Gill Sans",
-                  color: "white",
-                  fontSize: vHeight / 50,
-                  textAlign: "center",
-                  paddingTop: 10
-                }}
-              >
-                Write an email to our main office staff.
-              </Text>
-            </View>
-          </LinearGradient>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.direction}>
-          <LinearGradient
-            colors={["#61529C", "#4b4172"]}
-            style={{
-              height: vHeight / 3,
-              backgroundColor: "#595385",
-              flexDirection: "row"
-            }}
-          >
-            <View
-              style={{
-                flex: 1,
-                flexDirection: "column",
-                justifyContent: "center",
-                paddingLeft: vWidth / 10
-              }}
-            >
-              <Icon
-                size={vHeight / 10}
-                name="location-arrow"
+                name="utensils"
                 style={{ color: "white" }}
               />
             </View>
@@ -193,27 +58,200 @@ export default class Contact extends Component {
                   color: "white",
                   fontSize: vHeight / 35,
                   paddingBottom: 10,
-                  marginLeft: 5,
                   textAlign: "center"
                 }}
               >
-                Location
+                Lunch
               </Text>
-
               <Text
                 style={{
                   fontFamily: "Gill Sans",
                   color: "white",
-                  fontSize: vHeight / 50,
+                  fontSize: vHeight / 60,
                   textAlign: "center",
                   paddingTop: 10
                 }}
               >
-                Visit us!!
+                What's for lunch today?
               </Text>
             </View>
-          </LinearGradient>
+          </View>
         </TouchableOpacity>
+        {/* //--------------------> */}
+        <TouchableOpacity>
+          <View
+            style={{
+              height: vHeight / 5,
+              width: "90%",
+              margin: 10,
+              borderRadius: 20,
+              marginLeft: 20,
+              flexDirection: "row",
+              backgroundColor: "#41817F"
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                paddingLeft: vWidth / 10
+              }}
+            >
+              <Icon
+                size={vHeight / 10}
+                name="calendar-alt"
+                style={{ color: "white" }}
+              />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                marginRight: vWidth / 5,
+                textAlign: "center",
+                marginBottom: 10
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "GillSans-Bold",
+                  color: "white",
+                  fontSize: vHeight / 45,
+                  paddingBottom: 10,
+                  textAlign: "center"
+                }}
+              >
+                Calendar
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "Gill Sans",
+                  color: "white",
+                  fontSize: vHeight / 60,
+                  textAlign: "center",
+                  paddingTop: 10
+                }}
+              >
+                See the official BASE calendar schedule
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+        {/* //--------------------> */}
+        <TouchableOpacity>
+          <View
+            style={{
+              height: vHeight / 5,
+              width: "90%",
+              margin: 10,
+              borderRadius: 20,
+              marginLeft: 20,
+              flexDirection: "row",
+              backgroundColor: "#0D4D4B"
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                paddingLeft: vWidth / 10
+              }}
+            >
+              <Icon
+                size={vHeight / 10}
+                name="globe"
+                style={{ color: "white" }}
+              />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                marginRight: vWidth / 5,
+                textAlign: "center",
+                marginBottom: 10
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "GillSans-Bold",
+                  color: "white",
+                  fontSize: vHeight / 45,
+                  paddingBottom: 10,
+                  textAlign: "center"
+                }}
+              >
+                BASE
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "Gill Sans",
+                  color: "white",
+                  fontSize: vHeight / 60,
+                  textAlign: "center",
+                  paddingTop: 10
+                }}
+              >
+                Visit the official website
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+        {/* //--------------------> */}
+        <View>
+          <View
+            style={{
+              height: vHeight / 5,
+              width: "90%",
+              margin: 10,
+              borderRadius: 20,
+              marginLeft: 20,
+              flexDirection: "row",
+              backgroundColor: "#54525C"
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                paddingLeft: vWidth / 10
+              }}
+            >
+              <Icon
+                size={vHeight / 10}
+                name="graduation-cap"
+                style={{ color: "#2D2C31" }}
+              />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "column",
+                justifyContent: "center",
+                marginRight: vWidth / 5,
+                textAlign: "center",
+                marginBottom: 10
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "GillSans-Bold",
+                  color: "#2D2C31",
+                  fontSize: vHeight / 45,
+                  paddingBottom: -20,
+                  textAlign: "center"
+                }}
+              >
+                Alumni Portal
+              </Text>
+            </View>
+          </View>
+        </View>
       </ScrollView>
     );
   }

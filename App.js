@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import { AppRegistry, Text, View, StatusBar } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import SplashScreen from "react-native-splash-screen";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+
 import Home from "./app/components/home.js";
 import Announcements from "./app/components/announcements.js";
 import Contact from "./app/components/contact.js";
-
 import BackgroundImage from "./app/components/BackgroundImage.js";
+import Materials from "./app/components/Materials.js";
 
 class HomeScreen extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
   render() {
     return (
       <BackgroundImage>
@@ -31,13 +36,7 @@ class AnnouncementScreen extends Component {
 
 class MaterialScreen extends Component {
   render() {
-    return (
-      <View>
-        <Text style={{ textAlign: "center", top: 200 }}>
-          This is going to be the Materials Screen
-        </Text>
-      </View>
-    );
+    return <Materials />;
   }
 }
 
@@ -47,11 +46,11 @@ class ContactScreen extends Component {
   }
 }
 
-class AdminPage extends Component {
-  render() {
-    return <Text>Hi</Text>;
-  }
-}
+// class AdminPage extends Component {
+//   render() {
+//     return <Text>Hi</Text>;
+//   }
+// }
 
 export default createMaterialBottomTabNavigator(
   {
@@ -80,7 +79,7 @@ export default createMaterialBottomTabNavigator(
       navigationOptions: {
         title: "Materials",
         tabBarLabel: <Text style={{ color: "white" }}>Materials</Text>,
-        barStyle: { backgroundColor: "#E64A19" },
+        barStyle: { backgroundColor: "#0D4D4B" },
         tabBarIcon: (
           <Icon size={24} name="calendar" style={{ color: "white" }} />
         )
@@ -95,13 +94,6 @@ export default createMaterialBottomTabNavigator(
         tabBarIcon: (
           <Icon size={24} name="comments" style={{ color: "white" }} />
         )
-      }
-    },
-    Admin: {
-      screen: AdminPage,
-      navigationOptions: {
-        gesturesEnabled: false,
-        tabBarVisible: false
       }
     }
   },
