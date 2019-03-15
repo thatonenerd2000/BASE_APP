@@ -4,7 +4,8 @@ import {
   View,
   Dimensions,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Alert
 } from "react-native";
 
 import Icon from "react-native-vector-icons/FontAwesome5";
@@ -202,7 +203,13 @@ export default class Materials extends Component {
           </View>
         </TouchableOpacity>
         {/* //--------------------> */}
-        <View>
+        <TouchableOpacity
+          onPress={() => {
+            Alert.alert(
+              "Stay tuned BASE Alumni, feature will be released soon!!"
+            );
+          }}
+        >
           <View
             style={{
               height: vHeight / 5,
@@ -251,7 +258,7 @@ export default class Materials extends Component {
               </Text>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
       </ScrollView>
     );
   }
